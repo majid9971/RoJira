@@ -1,6 +1,7 @@
 /**
  * A simple Calculator class that performs basic arithmetic operations.
- * This calculator supports addition, subtraction, multiplication, and division.
+ * This calculator supports addition, subtraction, multiplication, division,
+ * modulo, power, and square root operations.
  */
 public class Calculator {
     
@@ -46,7 +47,7 @@ public class Calculator {
      * @throws ArithmeticException if b is zero
      */
     public double divide(double a, double b) {
-        if (b == 0) {
+        if (Math.abs(b) < 1e-10) {
             throw new ArithmeticException("Cannot divide by zero");
         }
         return a / b;
@@ -61,7 +62,7 @@ public class Calculator {
      * @throws ArithmeticException if b is zero
      */
     public double modulo(double a, double b) {
-        if (b == 0) {
+        if (Math.abs(b) < 1e-10) {
             throw new ArithmeticException("Cannot calculate modulo with zero");
         }
         return a % b;

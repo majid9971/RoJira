@@ -38,6 +38,9 @@ public class Main {
         System.out.println("50 - 30 = " + calculator.subtract(50, 30));
         System.out.println("7 * 8 = " + calculator.multiply(7, 8));
         System.out.println("100 / 4 = " + calculator.divide(100, 4));
+        System.out.println("17 % 5 = " + calculator.modulo(17, 5));
+        System.out.println("2 ^ 10 = " + calculator.power(2, 10));
+        System.out.println("√25 = " + calculator.squareRoot(25));
         
         // Demonstrate error handling
         System.out.println("\n=== Error Handling Examples ===\n");
