@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Square Root: √" + num3 + " = " + calculator.squareRoot(num3));
         
         // More examples
-        System.out.println("\n=== Additional Examples ===\n");
+        System.out.println("\n=== Additional Example ===\n");
         System.out.println("20 + 15 = " + calculator.add(20, 15));
         System.out.println("50 - 30 = " + calculator.subtract(50, 30));
         System.out.println("7 * 8 = " + calculator.multiply(7, 8));
