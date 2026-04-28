@@ -10,7 +10,7 @@ locals {
     Application = var.app_name
     Environment = var.environment
     ManagedBy   = "Terraform"
-    Project     = "ROJ-56"
+    Project     = "Rovo-POC"
   }
 }
 
@@ -53,6 +53,21 @@ module "ecs" {
   memory              = var.task_memory
   desired_count       = var.desired_count
   tags                = local.common_tags
+}
+
+# ── EC2 Instance ─────────────────────────────────────────────
+module "ec2" {
+  source = "./modules/ec2"
+
+  app_name       = local.app_name
+  environment    = local.environment
+  vpc_id         = module.networking.vpc_id
+  subnet_id      = module.networking.public_subnet_ids[0]
+  instance_type  = var.ec2_instance_type
+  ami_id         = var.ec2_ami_id
+  key_name       = var.ec2_key_name
+  office_ip_cidr = var.office_ip_cidr
+  tags           = local.common_tags
 }
 
 # ── CloudWatch Log Group ─────────────────────────────────────
