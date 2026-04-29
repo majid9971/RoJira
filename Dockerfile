@@ -12,7 +12,9 @@ COPY src/main/java/ ./src/
 
 # Compile Java sources
 RUN mkdir -p out && \
-    javac -d out src/Calculator.java src/Main.java
+    javac -d out src/Calculator.java src/Main.java \
+    src/OrderStatus.java src/OrderItem.java src/OrderStatusChange.java \
+    src/Order.java src/OrderService.java src/OrderManagementDemo.java
 
 # ── Stage 2: Runtime ──────────────────────────────────────────
 FROM eclipse-temurin:21-jre-alpine AS runtime
