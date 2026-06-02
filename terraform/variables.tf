@@ -75,6 +75,30 @@ variable "desired_count" {
   default     = 2
 }
 
+# ── EC2 ──────────────────────────────────────────────────────
+variable "ec2_instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "ec2_ami_id" {
+  description = "AMI ID for the EC2 instance. If empty, the latest Amazon Linux 2 AMI is used."
+  type        = string
+  default     = ""
+}
+
+variable "ec2_key_name" {
+  description = "Name of the SSH key pair to associate with the EC2 instance (optional)"
+  type        = string
+  default     = ""
+}
+
+variable "office_ip_cidr" {
+  description = "CIDR block of the office IP allowed to SSH into the EC2 instance"
+  type        = string
+}
+
 # ── Observability ────────────────────────────────────────────
 variable "log_retention_days" {
   description = "CloudWatch log retention period in days"

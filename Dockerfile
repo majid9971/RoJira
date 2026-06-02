@@ -12,7 +12,7 @@ COPY src/main/java/ ./src/
 
 # Compile Java sources
 RUN mkdir -p out && \
-    javac -d out src/Calculator.java src/Main.java
+    javac -d out src/Product.java src/ProductRepository.java src/ProductService.java src/ProductServer.java src/Calculator.java src/Main.java
 
 # ── Stage 2: Runtime ──────────────────────────────────────────
 FROM eclipse-temurin:21-jre-alpine AS runtime
